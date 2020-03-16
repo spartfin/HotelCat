@@ -7,6 +7,11 @@
   padding: 0 98px;
 }
 
+.header__logo {
+  display: flex;
+  align-items: center;
+}
+
 .header__navigation {
   display: flex;
   align-items: center;
@@ -19,6 +24,10 @@
 
   &:hover {
     opacity: 0.5;
+  }
+
+  &:last-child {
+    margin-right: 0;
   }
 }
 

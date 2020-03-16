@@ -1,11 +1,11 @@
 .preview__info {
   max-width: 1366px;
+  height: 503px;
   margin: 0 auto;
   background-image: url("../img/vector-backround.png"),
     url("../img/cat-backround.png");
   background-repeat: no-repeat;
-  min-height: 504px;
-  padding-top: 153px;
+  padding-top: 152px;
   padding-bottom: 153px;
   padding-left: 198px;
 }
@@ -23,7 +23,8 @@
   font-style: normal;
   font-weight: bold;
   font-size: 62px;
-  line-height: 73px;
+  line-height: 66px;
+  margin-bottom: 10px;
 }
 
 .preview__info p {
@@ -32,7 +33,7 @@
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
-  margin-bottom: 40px;
+  margin-bottom: 34px;
 }
 
 .preview__button {
@@ -56,8 +57,8 @@
     width: 36px;
     height: 36px;
     background-image: url("../img/paw.png");
-    top: 8px;
-    right: 10px;
+    top: 7px;
+    right: 6px;
   }
 
   &:hover {
