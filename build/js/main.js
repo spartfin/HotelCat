@@ -127,4 +127,114 @@
     reviewsButtonSlide[prevItem].classList.remove('reviews__active');
     reviewsButtonSlide[activeItem].classList.add('reviews__active');
   };
+
+  /* Scrolls шапка*/
+  var variables = document.getElementById('variables');
+  var variablesScroll = document.querySelector('.variables__scroll');
+
+  var variablesScrollClick = function () {
+    variablesScroll.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      variables.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+  };
+  variablesScrollClick();
+
+  var numbers = document.getElementById('numbers');
+  var numbersScroll = document.querySelector('.numbers__scroll');
+
+  var numbersScrollClick = function () {
+    numbersScroll.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      numbers.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+  };
+  numbersScrollClick();
+
+  var reviews = document.getElementById('reviews');
+  var reviewsScroll = document.querySelector('.reviews__scroll');
+
+  var reviewsScrollClick = function () {
+    reviewsScroll.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      reviews.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+  };
+  reviewsScrollClick();
+
+  var feedback = document.getElementById('feedback');
+  var feedbackScroll = document.querySelector('.feedback__scroll');
+
+  var feedbackScrollClick = function () {
+    feedbackScroll.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      feedback.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+  };
+  feedbackScrollClick();
+
+  /* Scrolls подвал*/
+  var basementVariablesScroll = document.querySelector('.basement__variables_scroll');
+
+  var basementVariablesScrollClick = function () {
+    basementVariablesScroll.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      variables.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+  };
+  basementVariablesScrollClick();
+
+  var basementNumbersScroll = document.querySelector('.basement__numbers_scroll');
+
+  var basementNumbersScrollClick = function () {
+    basementNumbersScroll.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      numbers.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+  };
+  basementNumbersScrollClick();
+
+  var basementReviewsScroll = document.querySelector('.basement__reviews_scroll');
+
+  var basementReviewsScrollClick = function () {
+    basementReviewsScroll.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      reviews.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+  };
+  basementReviewsScrollClick();
+
+  var basementFeedbackScroll = document.querySelector('.basement__feedback_scroll');
+
+  var basementFeedbackScrollClick = function () {
+    basementFeedbackScroll.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      feedback.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+  };
+  basementFeedbackScrollClick();
 })();
