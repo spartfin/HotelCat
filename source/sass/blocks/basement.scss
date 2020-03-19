@@ -1,0 +1,85 @@
+.basement__nav {
+  max-width: 1366px;
+  min-height: 78px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 198px;
+  padding-top: 3px;
+  border-bottom: 1px solid #efefef;
+}
+
+.basement__logo {
+  display: flex;
+  align-items: center;
+}
+
+.basement__navigation {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-top: 28px;
+}
+
+.basement__navigation li {
+  margin-right: 30px;
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.basement__navigation a {
+  font-family: $textLato;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.basement__footer {
+  max-width: 1366px;
+  margin: 0 auto;
+  display: flex;
+  min-height: 49px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 198px;
+}
+
+.basement__footer_wrapper {
+  display: flex;
+}
+
+.basement__footer_wrapper svg {
+  width: 9px;
+  height: 9px;
+  margin-top: 1px;
+  margin-right: 5px;
+}
+
+.basement__footer p {
+  font-family: $textLato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: #8f8f8f;
+}
+
+.basement__footer a {
+  font-family: $textLato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: #8f8f8f;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
