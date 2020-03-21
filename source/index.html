@@ -36,7 +36,7 @@
       </div>
     </section>
 
-    <section id= "variables" class="variables">
+    <section id="variables" class="variables">
       <h2>Почему мы?</h2>
       <ul class="variables__list">
         <li class="variables__item variables__item_temperature">
@@ -258,6 +258,38 @@
     </section>
   </footer>
 
+  <section class="overlay"></section>
+
+  <section class="popup">
+    <h2 class="popup__title">Забронировать номер</h2>
+    <form class="popup__form" action="#" method="post">
+      <p class="popup__form_item">
+        <input aria-label="Имя" type="text" name="login" placeholder="Ваше имя" required="">
+      </p>
+      <p class="popup__form_item">
+        <input aria-label="Имя" type="text" name="login" placeholder="Имя питомца" required="">
+      </p>
+      <p class="popup__form_item">
+        <input aria-label="Телефон" type="tel" id="popup-phone-mask" name="phone" placeholder="Телефон" required="">
+      </p>
+      <p class="popup__form_item">
+        <input aria-label="E-mail" type="email" id="popup-email-mask" name="e-mail" placeholder="E-mail" required="">
+      </p>
+      <div class="popup__calendar">
+      <p>Дата заезда</p>
+      <p class="popup__form_calendar">с
+        <input type="text" id="from-date" name="calendar" value="26.01.2020" required="">
+      </p>
+      <p class="popup__form_calendar">по
+        <input type="text" id="by-date" name="calendar" value="26.01.2020" required="">
+      </p>
+    </div>
+      <button class="popup__button" type="submit">Отправить заявку</button>
+    </form>
+    <button class="popup__close" type="button">Закрыть</button>
+  </section>
+
+  <script src="https://unpkg.com/imask"></script>
   <script src="js/main.js"></script>
 </body>
 

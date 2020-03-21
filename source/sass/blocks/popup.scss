@@ -1,0 +1,118 @@
+.popup {
+  display: none;
+  position: fixed;
+  max-width: 570px;
+  width: 100%;
+  height: 649px;
+  top: 50%;
+  margin-top: -302px;
+  left: 50%;
+  margin-left: -245px;
+  z-index: 15;
+  padding: 70px 70px;
+  background: #fffefd;
+  box-shadow: 0 0 25px rgba(208, 208, 208, 0.25);
+  border-radius: 10px;
+}
+
+.popup__hidden {
+  display: block;
+}
+
+.popup__close {
+  font-size: 0;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  background-image: url("../img/popup-close.svg");
+  right: 20px;
+  top: 20px;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.popup__title {
+  font-family: $textRubikBolt;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 33px;
+  padding-bottom: 10px;
+}
+
+.popup__form input {
+  max-width: 430px;
+  height: 52px;
+  width: 100%;
+  padding-left: 24px;
+  border: 1px solid #d7d7d7;
+  border-radius: 25px;
+  font-family: $textLato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.popup__form_item {
+  margin-bottom: 30px;
+}
+
+.popup__form_item ::placeholder {
+  color: #1a212f;
+}
+
+.popup__calendar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.popup__form_calendar input {
+  max-width: 129px;
+  width: 100%;
+  height: 52px;
+  border: 1px solid #d7d7d7;
+  border-radius: 25px;
+  font-family: $textLato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #B5B5B5;
+}
+
+.popup__button {
+  position: relative;
+  width: 230px;
+  height: 50px;
+  background: #ff7236;
+  box-shadow: 0 5px 25px rgba(26, 33, 47, 0.1);
+  border-radius: 25px;
+  font-family: $textLato;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: start;
+  padding: 16px 30px;
+  color: #fffefd;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 36px;
+    height: 36px;
+    background-image: url("../img/paw-white.png");
+    top: 7px;
+    right: 6px;
+  }
+
+  &:hover {
+    opacity: 0.5;
+  }
+}

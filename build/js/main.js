@@ -1,3 +1,5 @@
+/* eslint-disable new-cap */
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-expressions */
 'use strict';
 
@@ -237,4 +239,112 @@
     });
   };
   basementFeedbackScrollClick();
+
+  /* Popup*/
+  var ESC_KEYCODE = 27;
+  var popupButton = document.querySelector('.numbers__button');
+  var popup = document.querySelector('.popup');
+  var closePopup = popup.querySelector('.popup__close');
+  var form = popup.querySelector('form');
+  var login = popup.querySelector('[name=login]');
+  var phone = popup.querySelector('[name=phone]');
+  var textarea = popup.querySelector('[name=textarea]');
+  var overlay = document.querySelector('.overlay');
+
+  var isStorageSupport = true;
+  var storage = '';
+
+  try {
+    storage = localStorage.getItem('login');
+  } catch (err) {
+    isStorageSupport = false;
+  }
+
+  popupButton.addEventListener('click', function (evt) {
+    evt.preventDefault();
+    popup.classList.add('popup__hidden');
+    overlay.classList.add('popup__hidden');
+    if (storage) {
+      login.value = storage;
+    }
+    login.focus();
+  });
+
+  closePopup.addEventListener('click', function (evt) {
+    evt.preventDefault();
+    popup.classList.remove('popup__hidden');
+    overlay.classList.remove('popup__hidden');
+  });
+
+  form.addEventListener('submit', function (evt) {
+    if (!login.value || !phone.value || !textarea.value) {
+      evt.preventDefault();
+    } else {
+      if (isStorageSupport) {
+        localStorage.setItem('login', login.value);
+      }
+    }
+  });
+
+  window.addEventListener('keydown', function (evt) {
+    if (evt.keyCode === ESC_KEYCODE) {
+      evt.preventDefault();
+      if (popup.classList.contains('popup__hidden')) {
+        popup.classList.remove('popup__hidden');
+        overlay.classList.remove('popup__hidden');
+      }
+    }
+  });
+
+  overlay.addEventListener('click', function (evt) {
+    evt.preventDefault();
+    if (popup.classList.contains('popup__hidden')) {
+      popup.classList.remove('popup__hidden');
+      overlay.classList.remove('popup__hidden');
+    }
+  });
+
+  /* Mask в попапе */
+  IMask(document.getElementById('popup-phone-mask'), {
+    mask: '+{7}(000)000-00-00'
+  });
+
+  /* Текущая дата в input */
+  var showCurrentDate = function () {
+    var getCurrentDay = new Date();
+    var year = getCurrentDay.getFullYear();
+    var month = '';
+    var monthCurrent = getCurrentDay.getMonth() + 1;
+    if (monthCurrent < 10) {
+      month = '0' + monthCurrent;
+    } else {
+      month = monthCurrent;
+    }
+    var day = '';
+    if (getCurrentDay.getDate() < 10) {
+      day = '0' + getCurrentDay.getDate();
+    } else {
+      day = getCurrentDay.getDate();
+    }
+    var valueCurrent = day + '.' + month + '.' + year;
+    valueCurrent.toString();
+    document.getElementById('from-date').value = valueCurrent;
+    document.getElementById('by-date').value = valueCurrent;
+  };
+  showCurrentDate();
+
+  /* Mask в датах popup */
+  IMask(document.getElementById('from-date'), {
+    mask: Date,
+    min: new Date(valueCurrent),
+    max: new Date(2030, 0, 1),
+    lazy: false
+  });
+
+  IMask(document.getElementById('by-date'), {
+    mask: Date,
+    min: new Date(valueCurrent),
+    max: new Date(2030, 0, 1),
+    lazy: false
+  });
 })();
