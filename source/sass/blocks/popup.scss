@@ -5,14 +5,20 @@
   width: 100%;
   height: 649px;
   top: 50%;
-  margin-top: -302px;
+  margin-top: -325px;
   left: 50%;
   margin-left: -245px;
   z-index: 15;
-  padding: 70px 70px;
+  padding-top: 64px;
+  padding-left: 72px;
+  padding-right: 68px;
+  padding-bottom: 70px;
   background: #fffefd;
   box-shadow: 0 0 25px rgba(208, 208, 208, 0.25);
   border-radius: 10px;
+  background-image: url("../img/popup-backround.png");
+  background-repeat: no-repeat;
+  background-position: -24px -24px;
 }
 
 .popup__hidden {
@@ -26,8 +32,9 @@
   height: 16px;
   cursor: pointer;
   background-image: url("../img/popup-close.svg");
-  right: 20px;
-  top: 20px;
+  background-size: cover;
+  right: 38px;
+  top: 40px;
 
   &:hover {
     opacity: 0.5;
@@ -40,14 +47,16 @@
   font-weight: bold;
   font-size: 28px;
   line-height: 33px;
-  padding-bottom: 10px;
+  text-align: center;
+  margin-bottom: 43px;
 }
 
 .popup__form input {
   max-width: 430px;
   height: 52px;
   width: 100%;
-  padding-left: 24px;
+  padding-left: 30px;
+  padding-top: 3px;
   border: 1px solid #d7d7d7;
   border-radius: 25px;
   font-family: $textLato;
@@ -58,7 +67,7 @@
 }
 
 .popup__form_item {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .popup__form_item ::placeholder {
@@ -69,7 +78,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
+  padding-top: 2px;
+  padding-left: 2px;
+
+  :first-of-type {
+    padding-right: 0;
+  }
 }
 
 .popup__form_calendar input {
@@ -83,10 +98,18 @@
   font-weight: normal;
   font-size: 16px;
   line-height: 19px;
-  color: #B5B5B5;
+  color: #b5b5b5;
+  padding-left: 22px;
+  padding-top: 2px;
+
+  &:focus {
+    color: #1a212f;
+  }
 }
 
 .popup__button {
+  display: block;
+  margin: 0 auto;
   position: relative;
   width: 230px;
   height: 50px;
@@ -99,7 +122,7 @@
   font-size: 16px;
   line-height: 19px;
   text-align: start;
-  padding: 16px 30px;
+  padding: 16px 33px;
   color: #fffefd;
 
   &::after {

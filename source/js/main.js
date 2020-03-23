@@ -309,7 +309,7 @@
     mask: '+{7}(000)000-00-00'
   });
 
-  /* Текущая дата в input */
+  /* Текущая дата в input
   var showCurrentDate = function () {
     var getCurrentDay = new Date();
     var year = getCurrentDay.getFullYear();
@@ -326,25 +326,25 @@
     } else {
       day = getCurrentDay.getDate();
     }
-    var valueCurrent = day + '.' + month + '.' + year;
-    valueCurrent.toString();
-    document.getElementById('from-date').value = valueCurrent;
-    document.getElementById('by-date').value = valueCurrent;
+    var placeholderCurrent = day + '.' + month + '.' + year;
+    placeholderCurrent.toString();
+    document.getElementById('from-date').placeholder = placeholderCurrent;
+    document.getElementById('by-date').placeholder = placeholderCurrent;
   };
-  showCurrentDate();
+  showCurrentDate(); */
 
-  /* Mask в датах popup */
+  // Mask даты в форме
   IMask(document.getElementById('from-date'), {
     mask: Date,
-    min: new Date(valueCurrent),
-    max: new Date(2030, 0, 1),
+    min: new Date(2020, 0, 1),
+    max: new Date(2025, 0, 1),
     lazy: false
   });
 
   IMask(document.getElementById('by-date'), {
     mask: Date,
-    min: new Date(valueCurrent),
-    max: new Date(2030, 0, 1),
+    min: new Date(2020, 0, 1),
+    max: new Date(2026, 0, 1),
     lazy: false
   });
 })();

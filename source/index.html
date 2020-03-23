@@ -262,12 +262,13 @@
 
   <section class="popup">
     <h2 class="popup__title">Забронировать номер</h2>
-    <form class="popup__form" action="#" method="post">
+    <form class="popup__form" action="https://echo.htmlacademy.ru" method="post"
+    enctype="multipart/form-data">
       <p class="popup__form_item">
         <input aria-label="Имя" type="text" name="login" placeholder="Ваше имя" required="">
       </p>
       <p class="popup__form_item">
-        <input aria-label="Имя" type="text" name="login" placeholder="Имя питомца" required="">
+        <input aria-label="Имя" type="text" name="login" placeholder="Имя Питомца" required="">
       </p>
       <p class="popup__form_item">
         <input aria-label="Телефон" type="tel" id="popup-phone-mask" name="phone" placeholder="Телефон" required="">
@@ -278,10 +279,10 @@
       <div class="popup__calendar">
       <p>Дата заезда</p>
       <p class="popup__form_calendar">с
-        <input type="text" id="from-date" name="calendar" value="26.01.2020" required="">
+        <input type="text" id="from-date" name="calendar" placeholder="26.01.2020" required="">
       </p>
       <p class="popup__form_calendar">по
-        <input type="text" id="by-date" name="calendar" value="26.01.2020" required="">
+        <input type="text" id="by-date" name="calendar" placeholder="26.01.2020" required="">
       </p>
     </div>
       <button class="popup__button" type="submit">Отправить заявку</button>
