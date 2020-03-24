@@ -279,6 +279,8 @@
   form.addEventListener('submit', function (evt) {
     if (!login.value || !phone.value || !textarea.value) {
       evt.preventDefault();
+      var newFormData = new FormData(form);
+      upload(newFormData, onSucces);
     } else {
       if (isStorageSupport) {
         localStorage.setItem('login', login.value);
@@ -347,4 +349,105 @@
     max: new Date(2026, 0, 1),
     lazy: false
   });
+
+  // AJAX
+  var AJAX_STATUS_OK = 200;
+  var URL = 'https://echo.htmlacademy.ru/data';
+  var URL_POST = 'https://echo.htmlacademy.ru';
+
+  window.load = function (onSuccess, onError) {
+    var xhr = new XMLHttpRequest();
+
+    xhr.responseType = 'json';
+    xhr.timeout = 10000;
+
+    xhr.addEventListener('load', function () {
+      if (xhr.status === AJAX_STATUS_OK) {
+        var responseArray = xhr.response.slice();
+        for (var t = 0; t < responseArray.length; t++) {
+          responseArray[t].id = t;
+        }
+        onSuccess(responseArray);
+      } else {
+        onError('Cтатус ответа: ' + xhr.status + ' ' + xhr.statusText);
+      }
+    });
+
+    xhr.addEventListener('error', function () {
+      onError('Произошла ошибка соединения');
+    });
+
+    xhr.addEventListener('timeout', function () {
+      onError('Запрос не успел выполниться за ' + xhr.timeout + 'мс');
+    });
+
+    xhr.open('GET', URL);
+    xhr.send();
+  };
+
+  window.upload = function (data, onSuccess) {
+    var xhr = new XMLHttpRequest();
+
+    xhr.responseType = 'json';
+
+    xhr.addEventListener('load', function () {
+      onSuccess(xhr.response);
+    });
+
+    xhr.addEventListener('error', function () {
+      window.onError();
+    });
+
+    xhr.open('POST', URL_POST);
+    xhr.send(data);
+  };
+
+  // Реализация всплытия об успешной или не успешной отправки формы бронирования('error');
+  var main = document.querySelector('main');
+
+  // Показываем диалоговое окно
+  var openWindow = function (dialogWindow) {
+    var successWindow = document.querySelector('#' + dialogWindow).content.querySelector('.' + dialogWindow);
+    var message = successWindow.cloneNode(true);
+    main.appendChild(message);
+  };
+
+  // Удаляем диалоговое окно
+  var closeWindow = function (dialogWindow) {
+    var dialog = main.querySelector('.' + dialogWindow);
+    var dialogButton = dialog.querySelectorAll('.' + dialogWindow + '__button');
+
+    var onEscPress = function (evt) {
+      if (evt.keyCode === ESC_KEYCODE) {
+        dialog.remove();
+      }
+      return evt;
+    };
+
+    var dialogElementRemove = function () {
+      dialog.remove();
+    };
+
+    // Если клик не по окну
+    var dialogRemove = function (evt) {
+      if (!evt.target.closest('.' + dialogWindow + '__inner')) {
+        dialogElementRemove();
+      }
+    };
+
+    // Закрывает на ESC
+    document.addEventListener('keydown', onEscPress);
+    // закрывает по клику на любую область экрана
+    dialog.addEventListener('click', dialogRemove);
+    // закрывает на кнопки
+    dialogButton.forEach(function (button) {
+      button.addEventListener('click', dialogElementRemove);
+    });
+  };
+
+  // функция успешной отправки
+  var onSucces = function () {
+    openWindow('success');
+    closeWindow('success');
+  };
 })();

@@ -242,6 +242,7 @@
 
   <section class="overlay"></section>
 
+
   <section class="popup">
     <h2 class="popup__title">Забронировать номер</h2>
     <form class="popup__form" action="https://echo.htmlacademy.ru" method="post" enctype="multipart/form-data">
@@ -258,18 +259,41 @@
         <input aria-label="E-mail" type="email" id="popup-email-mask" name="e-mail" placeholder="E-mail" required="">
       </p>
       <div class="popup__calendar">
-      <p>Дата заезда</p>
-      <p class="popup__form_calendar">с
-        <input type="text" id="from-date" name="calendar" placeholder="26.01.2020" required="">
-      </p>
-      <p class="popup__form_calendar">по
-        <input type="text" id="by-date" name="calendar" placeholder="26.01.2020" required="">
-      </p>
-    </div>
+        <p>Дата заезда</p>
+        <p class="popup__form_calendar">с
+          <input type="text" id="from-date" name="calendar" placeholder="26.01.2020" required="">
+        </p>
+        <p class="popup__form_calendar">по
+          <input type="text" id="by-date" name="calendar" placeholder="26.01.2020" required="">
+        </p>
+      </div>
       <button class="popup__button" type="submit">Отправить заявку</button>
     </form>
     <button class="popup__close" type="button">Закрыть</button>
   </section>
+
+  <!-- Сообщение с ошибкой бронирования номера -->
+  <template id="error">
+    <section class="error">
+      <div class="error__inner">
+        <h2 class="error__title">Ошибка загрузки файла</h2>
+        <div class="error__buttons">
+          <button type="button" class="error__button">Попробовать снова</button>
+          <button type="button" class="error__button">Загрузить другой файл</button>
+        </div>
+      </div>
+    </section>
+  </template>
+
+  <!-- Сообщение об успешной бронировании номера-->
+  <template id="success">
+    <section class="success">
+      <div class="success__inner">
+        <h2 class="success__title">Изображение успешно загружено</h2>
+        <button type="button" class="success__button">Круто!</button>
+      </div>
+    </section>
+  </template>
 
   <script src="https://unpkg.com/imask"></script>
   <script src="js/main.js"></script>
